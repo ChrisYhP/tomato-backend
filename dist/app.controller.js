@@ -17,11 +17,13 @@ const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const passport_1 = require("@nestjs/passport");
 const auth_service_1 = require("./auth/auth.service");
+const photo_service_1 = require("./photo/photo.service");
 let AppController = (() => {
     let AppController = class AppController {
-        constructor(appService, authService) {
+        constructor(appService, authService, photoService) {
             this.appService = appService;
             this.authService = authService;
+            this.photoService = photoService;
         }
         async login(req) {
             return this.authService.login(req.user);
@@ -34,6 +36,9 @@ let AppController = (() => {
         }
         getName() {
             return this.appService.getName();
+        }
+        getPhoto() {
+            return this.photoService.findAll();
         }
     };
     __decorate([
@@ -59,16 +64,22 @@ let AppController = (() => {
         __metadata("design:returntype", String)
     ], AppController.prototype, "getHello", null);
     __decorate([
-        common_1.UseGuards(passport_1.AuthGuard('jwt')),
         common_1.Get('name'),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", []),
         __metadata("design:returntype", String)
     ], AppController.prototype, "getName", null);
+    __decorate([
+        common_1.Get('photo'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", Promise)
+    ], AppController.prototype, "getPhoto", null);
     AppController = __decorate([
         common_1.Controller(),
         __metadata("design:paramtypes", [app_service_1.AppService,
-            auth_service_1.AuthService])
+            auth_service_1.AuthService,
+            photo_service_1.PhotoService])
     ], AppController);
     return AppController;
 })();
