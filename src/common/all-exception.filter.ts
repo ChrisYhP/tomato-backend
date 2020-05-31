@@ -8,14 +8,10 @@ export class AllExceptionsFilter implements ExceptionFilter {
     const request = ctx.getRequest()
     const response = ctx.getResponse()
     const status = exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR
-
-    const message = exception.message.message;
+    const message = exception.response.message;
     new Logger('错误提示', message);
     const errResponse = {
-      data: {
-        error: message
-      },
-      message: '请求失败',
+      message: message,
       code: 1,
       statusCode: status,
       url: request.url
