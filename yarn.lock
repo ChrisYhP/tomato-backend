@@ -792,6 +792,13 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.2.tgz#857a118d8634c84bba7ae14088e4508490cd5da5"
   integrity sha512-4kPlzbljFcsttWEq6aBW0OZe6BDajAmyvr2xknBG92tejQnvdGtT9+kXSZ580DqpxY9qG2xeQVF9Dq0ymUTo5Q==
 
+"@types/multer@^1.4.7":
+  version "1.4.7"
+  resolved "http://10.104.6.140:4873/@types%2fmulter/-/multer-1.4.7.tgz#89cf03547c28c7bbcc726f029e2a76a7232cc79e"
+  integrity sha1-ic8DVHwox7vMcm8Cnip2pyMsx54=
+  dependencies:
+    "@types/express" "*"
+
 "@types/node@*", "@types/node@^14.0.1":
   version "14.0.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.5.tgz#3d03acd3b3414cf67faf999aed11682ed121f22b"
@@ -1419,6 +1426,13 @@ axios@0.19.2:
   integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
     follow-redirects "1.5.10"
+
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "http://10.104.6.140:4873/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
+  dependencies:
+    follow-redirects "^1.10.0"
 
 babel-jest@^26.0.1:
   version "26.0.1"
@@ -3148,6 +3162,11 @@ follow-redirects@1.5.10:
   integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
   dependencies:
     debug "=3.1.0"
+
+follow-redirects@^1.10.0:
+  version "1.14.1"
+  resolved "http://10.104.6.140:4873/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
+  integrity sha1-2RFN7Qoc/dM04WTmZirQK/2R/0M=
 
 for-in@^1.0.2:
   version "1.0.2"

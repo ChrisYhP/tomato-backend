@@ -1,7 +1,6 @@
 import { Controller, Post, Body, Get, HttpException, Req, Header, ValidationPipe, UsePipes, UseGuards } from '@nestjs/common';
 import { CreateUserDto, LoginUserDto } from './dto/user.dto';
 import { UserService } from './user.service';
-import { AuthGuard } from '@nestjs/passport'
 
 @Controller('user')
 export class UserController {
@@ -17,9 +16,9 @@ export class UserController {
     return await this.userService.login(userInfo)
   }
 
-  // @UseGuards(AuthGuard('jwt'))
-  // @Get()
-  // test() {
-  //   return 'success'
-  // }
+  @Get('test')
+  async test() {
+    return 'test'
+  }
+
 }

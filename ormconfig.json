@@ -1,10 +1,10 @@
 {
   "type": "mysql",
-  "host": "localhost",
+  "host": "10.104.6.68",
   "port": 3306,
   "username": "root",
   "password": "123456",
-  "database": "tomato",
+  "database": "fe-test",
   "entities": ["dist/**/*entity{.ts,.js}"],
   "migrations": [],
 	"timezone": "UTC",
