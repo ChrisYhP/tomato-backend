@@ -9,7 +9,7 @@ pipeline {
         BRANCH_NAME = sh(returnStdout: true, script: "echo ${GIT_BRANCH} | sed 's/origin\\///g'").trim()
         APP_NAME = "hotfix-for-android-node"
         IMAGE_TAG = "${BRANCH_NAME}-${createTime()}"
-        REPO = "4px-giws-registry-vpc.cn-shenzhen.cr.aliyuncs.com/fe-test"
+        REPO = "*****"
     }
 
     stages {
@@ -28,7 +28,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 echo '****************************** login docker repo... ******************************'
-                sh 'docker login --username=S16017@4pxtech --password=fpxfe123456 4px-giws-registry-vpc.cn-shenzhen.cr.aliyuncs.com'
+                sh 'docker login ***'
                 echo '****************************** push image... ******************************'
                 sh 'docker tag ${APP_NAME}:latest $REPO/${APP_NAME}:${IMAGE_TAG}'
                 sh 'docker tag ${APP_NAME}:latest $REPO/${APP_NAME}:latest'
